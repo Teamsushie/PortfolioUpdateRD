@@ -4,6 +4,7 @@ html,body{
   margin:0;
   height:auto;
   font-family: 'Open Sans Condensed', sans-serif;
+  scroll-behavior: smooth;
 
 }
 img {
@@ -55,6 +56,89 @@ img {
 .header a{
   color:#eee
 }
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: rgba(44, 80, 144, 0.183);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-transition: background 0.3s, opacity 0.3s;
+	transition: background 0.3s, opacity 0.3s;
+  
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #111;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*--------------------------------------------------------------
+	Footer
+--------------------------------------------------------------*/
+.footer {
+  padding: 10px 0;
+}
+
+.footer .copyright {
+  margin: 0;
+}
+
+.footer .footer-social-links {
+  text-align: right;
+}
+
+.footer .footer-social-links a {
+  display: inline-block;
+  padding: 0 6px;
+}
+
 .menu{
   display:block;
   width:30px;
@@ -115,15 +199,49 @@ img {
   0% { transform:scale(1)}
   50% { transform:scale(1.2)}
 }
-.content, h2{  
-  padding:5% 10%;
-  text-align:center;
-  font-family: 'Roboto Mono', monospace;
-  
-  
-        
+.content, h1{  
+ 
+  font-family: 'Just Me Again Down Here', cursive;
+  float: left;
+  font-size:10rem;     
+  z-index: -1 ;
+  position: absolute;
+  margin-top: -75px;
 }
 
+.contents,h2{
+  font-family: 'Libre Baskerville', serif;
+  z-index:0;
+}
+.contents,p{
+  font-family: 'Cabin', sans-serif;
+}
+
+.font-alt {
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.font-alt-1{
+  font-family: 'Just Me Again Down Here', cursive;
+  text-transform: uppercase;
+ 
+  font-size:5rem;
+  color:white;
+}
+
+.font-serif {
+  font-family: Volkhov, "Times New Roman", sans-serif;
+  font-style: italic;
+  color:white;
+}
+
+.font-serif-1 {
+  font-family: 'Cabin', sans-serif;
+  font-style: italic;
+  color:white;
+}
 .info, h1 {
   font-family: 'Libre Barcode 128 Text', cursive;
     
@@ -136,6 +254,7 @@ h2 {
 /* Buttons */
 
 .btn {
+  padding-bottom:500px;
 	display: inline-block;
 	cursor: pointer;
 	text-align: center;
@@ -175,8 +294,52 @@ h2 {
 	pointer-events: none;
 }
 
-/* Bottom nav */
+/*--------------------------------------------------------------
+	Services & Features
+--------------------------------------------------------------*/
+.features-item {
+  margin: 20px 0;
+  text-align: center;
+}
 
+.features-icon,
+.alt-features-icon {
+  line-height: 1.2;
+  font-size: 42px;
+  color: #111;
+}
+
+.features-title,
+.alt-features-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #111;
+  margin: 16px 0 15px;
+}
+
+.alt-features-item {
+  position: relative;
+  padding-left: 55px;
+  margin: 65px 0 0 0;
+}
+
+.alt-features-icon {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 0;
+  top: 0;
+  text-align: center;
+  line-height: 40px;
+  font-size: 28px;
+}
+
+.alt-features-title {
+  font-size: 13px;
+  margin: 0 0 10px;
+}
 
 
 /*--------------------------------------------------------------
@@ -188,6 +351,7 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0 0 70px;
+  font-family:'Libre Baskerville', serif;
 }
 
 .filter > li {
@@ -332,6 +496,144 @@ h2 {
 }
 
 /*--------------------------------------------------------------
+	Navbar
+--------------------------------------------------------------*/
+.navbar-custom {
+  background-color: rgba(10, 10, 10, 0.9);
+  border: 0;
+  border-radius: 0;
+  z-index: 1000;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  transition: background, padding 0.4s ease-in-out 0s;
+}
+
+.navbar a {
+  transition: color 0.125s ease-in-out 0s;
+}
+
+.navbar-custom .dropdown-menu {
+  background: rgba(26, 26, 26, 0.9);
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.navbar-custom .navbar-brand {
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #fff;
+}
+
+.logo1 {
+  background-size: cover;
+  width: 55px;
+  height: 45px;
+  resize: both;
+  overflow: scroll;
+  
+}
+
+.navbar-custom .nav li > a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-custom .dropdown-menu > li > a {
+  border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
+  padding: 11px 15px;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+.navbar-custom .dropdown-menu .dropdown-menu {
+  border-left: 1px solid rgba(73, 71, 71, 0.15);
+  left: 100%;
+  right: auto;
+  top: 0;
+  margin-top: 0;
+}
+
+.navbar-custom .dropdown-menu.left-side .dropdown-menu {
+  border: 0;
+  border-right: 1px solid rgba(73, 71, 71, 0.15);
+  right: 100%;
+  left: auto;
+}
+
+.navbar-custom .nav > li > a:focus,
+.navbar-custom .nav > li > a:hover,
+.navbar-custom .nav .open > a,
+.navbar-custom .nav .open > a:focus,
+.navbar-custom .nav .open > a:hover,
+.navbar-custom .dropdown-menu > li > a:focus,
+.navbar-custom .dropdown-menu > li > a:hover {
+  background: none;
+  color: #fff;
+}
+
+.navbar-custom .dropdown-menu > li > a:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-custom .dropdown-toggle:after {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  margin-top: -6px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 9px;
+  content: "\f107";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+  background: #fff;
+}
+
+.dropdown-menu {
+  min-width: 180px;
+  font-size: 11px;
+}
+
+/* Progress bars */
+.progress {
+  overflow: visible;
+  height: 4px;
+}
+
+.progress-bar {
+  position: relative;
+}
+
+.progress-bar.pb-dark {
+  background: rgb(9, 78, 64);
+}
+
+.progress-bar span {
+  position: absolute;
+  display: block;
+  right: -0px;
+  top: -24px;
+  opacity: 0;
+  line-height: 12px;
+  font-size: 12px;
+  color: #111;
+  padding: 4px 0px;
+}
+
+.progress-bar span:after {
+  display: inline-block;
+  content: "%";
+}
+/*--------------------------------------------------------------
 	Single Portfolio
 --------------------------------------------------------------*/
 .work-details {
@@ -375,6 +677,44 @@ h2 {
   background-size: cover;
 }
 
+.module-title {
+  position: relative;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+  font-family:'Just Me Again Down Here', cursive;
+  color: #111;
+  margin: 0 0 70px;
+}
+
+.module-title-2{
+  position: relative;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+  color: #111;
+  margin: 0 0 70px;
+}
+
+.module-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 70px;
+}
+
+.module-icon {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.module-title + .module-subtitle {
+  margin-top: -35px;
+}
+
 /* Module header */
 .module-small {
   padding: 70px 0;
@@ -387,6 +727,7 @@ h2 {
 .module-medium {
   padding: 75px 0px;
 }
+
 
 .holder-w {
   position: relative;
@@ -498,12 +839,13 @@ h2 {
 .demo-3 a { color: #b5b5b5; }
 .demo-3 .btn { background: rgba(148,147,154,0.7); }
 .demo-3 .btn:hover { background: rgba(148,147,154,1); }
-.demo-3 .trigger-headline { color: #401fe4; }
+.demo-3 .trigger-headline { color: #857ea5; }
 .demo-3 .github-icon { fill: #b5b5b5;}
 
 /* EXTRA */
 .trigger-headline {
-	top: 0;
+  font-family: 'Just Me Again Down Here', cursive;
+	top: 230px;
 	left: 0;
 	position: absolute;
 	font-size: 6vw;
@@ -520,7 +862,7 @@ h2 {
 	align-items: center;
 	justify-content: center;
 	margin: 0;
-    color:blue;
+    color:rgba(132, 26, 64, 0.748);
     
 }
 
@@ -617,15 +959,16 @@ h2 {
   width: 49px;
   height: 49px;
   position: absolute;
-  bottom: 30px;
+  bottom: 200px;
   left: 0;
   right: 0;
   margin: auto;
-  padding-top: 500px;
+  padding-top: 0px;
   z-index: 9;
   border-radius: 50%;
   -webkit-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
+
 }
 img, 
 figure {
